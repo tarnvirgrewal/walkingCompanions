@@ -52,7 +52,7 @@ class MatchProfile extends React.Component {
 }
 const styles= StyleSheet.create({
     container:{
-
+        padding: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },
