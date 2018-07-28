@@ -23,15 +23,33 @@ export default class UserMessages extends React.Component {
         });
     }
 
+
     render() {
 
         return(
+            <View  style={{flex:1}}>
+                <GiftedChat
 
-            <GiftedChat messages={this.state.messages} />
+                    messages={this.state.messages}
+                    onSend={messages => this.onSend(messages)}
+                    user={{
+                        _id: 1,
+                    }}
+                ></GiftedChat>
+
+                <KeyboardAvoidingView behavior={'padding'} keyboardVerticalOffset={90}/>
+            </View>
         )
 
     }
 
-
 }
 
+const styles =StyleSheet.create({
+    container:{
+        flex:1,
+    },
+    userName:{
+
+    }
+});
