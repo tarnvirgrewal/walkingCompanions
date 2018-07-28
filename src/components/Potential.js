@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView, Button, StyleSheet, Dimensions } from 'react-native';
 import Candidates from './Candidates';
-// import react-native-linear-gradient from 'react-native-linear-gradient';
+// import LinearGradient from 'react-native-linear-gradient';
 
 let ScreenWidth = Dimensions.get("window").width;
 
@@ -9,22 +9,23 @@ const dummy = [
   { id: 1, name: "Jeff", eta: 5 },
   { id: 2, name: "William", eta: 15 },
   { id: 3, name: "Sandy", eta: 25 },
-  { id: 1, name: "Jeff", eta: 5 },
-  { id: 2, name: "William", eta: 15 },
-  { id: 3, name: "Sandy", eta: 25 },
-  { id: 1, name: "Jeff", eta: 5 },
-  { id: 2, name: "William", eta: 15 },
-  { id: 3, name: "Sandy", eta: 25 },
+  { id: 4, name: "Jeff", eta: 5 },
 ];
 
 const styles = StyleSheet.create({
     container: {
-      height: 350,
-      backgroundColor: '#ace0f9', //'linear-gradient(#fff1eb, #ace0f9)',
+      height: 300,
+      backgroundColor: '#fff', //'linear-gradient(#fff1eb, #ace0f9)',
+      borderRadius: 20,
       width: ScreenWidth,
       position: 'absolute',
       padding: 20,
       bottom: 0,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.8,
+      shadowRadius: 2,
+      elevation: 1,
     },
     text: {
       color: 'black',

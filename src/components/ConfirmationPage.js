@@ -14,14 +14,14 @@ class ConfirmationPage extends React.Component {
         return (
             <View style={styles.container} >
 
-                <Image  source={require('../../res/timer.png')} />
-                <Text>Please wait while we confirm</Text>
-
-
-                <Button
-                    onPress={()=> this.handleOnPress('Home')}
-                    title="Cancel"
-                />
+                <Image style={styles.section} source={require('../../res/timer.png')} />
+                <Text style={styles.section}>Please wait while we confirm</Text>
+                <View style={styles.section} >
+                    <Button
+                        onPress={()=> this.handleOnPress('Home')}
+                        title="Cancel"
+                    />
+                </View>
             </View>
 
         );
@@ -33,8 +33,8 @@ const styles= StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    userName:{
-
+    section:{
+        margin: 20
     }
 });
 

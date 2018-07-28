@@ -14,7 +14,7 @@ import MeetUp from "./src/components/MeetUp";
 import ConfirmationPage from "./src/components/ConfirmationPage"
 import RequestDenied from "./src/components/RequestDenied"
 const App = createStackNavigator({
-    Home: { screen: Home },
+    // Home: { screen: Home },
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
     Candidate: { screen: Candidate },
