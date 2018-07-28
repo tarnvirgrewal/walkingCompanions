@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
   },
 
   buttonPosition: {
-      position: 'absolute',
-      paddingTop: 10
+      margin: 15,
+      backgroundColor: 'white',
+      width: 100
   }
 });
 
@@ -91,19 +92,21 @@ class Decision extends React.Component {
                     />
                     <Text style={styles.text}>Has requested to travel with you!</Text>
                 </View>
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
-                    <Button
-                        onPress={() => this.handleOnPress('Map')}
-                        title="Accept"
-                        color="#841584"
-                    />
-                </View>
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
-                    <Button
-                        onPress={() => this.handleOnPress('Map')}
-                        title="Decline"
-                        color="#841584"
-                    />
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0, flex: 1, flexDirection: 'row',}}>
+                    <View style={styles.buttonPosition}>
+                        <Button
+                            onPress={() => this.handleOnPress('Map')}
+                            title="Accept"
+                            color="#841584"
+                        />
+                    </View>
+                    <View style={styles.buttonPosition}>
+                        <Button
+                            onPress={() => this.handleOnPress('Map')}
+                            title="Decline"
+                            color="#841584"
+                        />
+                    </View>
                 </View>
             </View>  
     );
