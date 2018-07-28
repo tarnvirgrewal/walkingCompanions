@@ -26,6 +26,10 @@ class Home extends React.Component {
                     title="look at user profile"
 
                 />
+                <Button
+                    onPress={()=> this.handleOnPress('RequestDenied')}
+                    title="Request Denied"
+                />
             </View>
 
         );
