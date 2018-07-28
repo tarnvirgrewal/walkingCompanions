@@ -105,12 +105,6 @@ class Meet extends React.Component {
                         color="#841584"
                     />
                 </View>
-                
-                <MapView.Marker
-                    coordinate={this.state.markers[0].coordinate}
-                    title={"meet here"}
-                    description={"description"}
-                />
             </View>  
     );
   }

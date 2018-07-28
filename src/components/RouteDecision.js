@@ -93,7 +93,7 @@ class Decision extends React.Component {
                 </View>
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
                     <Button
-                        onPress={() => this.handleOnPress('Map')}
+                        onPress={() => this.handleOnPress('MeetUp')}
                         title="Accept"
                         color="#841584"
                     />
