@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, Button } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, Polyline } from 'react-native-maps';
 
 const styles = StyleSheet.create({
   container: {
@@ -60,8 +60,8 @@ class Meet extends React.Component {
             },
             ],
             region: {
-                latitude: -37.796265,
-                longitude: 144.960954,
+                latitude: -37.794565,
+                longitude: 144.961054,
                 latitudeDelta: 0.015,
                 longitudeDelta: 0.0121,
             },
@@ -83,17 +83,36 @@ class Meet extends React.Component {
                     region={this.state.region}
                     zoomEnabled={false}
                     style={styles.container}
-                    annotations={this.state.markers[0]}
                     >
                     <Marker
-                        coordinate={this.state.region}
+                        coordinate={this.state.markers[0].coordinate}
                         pinColor = 'black'
                     />
+                    <Marker
+                        coordinate={{ latitude: -37.792977, longitude: 144.959310 }}
+                        pinColor = 'black'
+                    />
+                    <Polyline
+                    coordinates={[
+                        { latitude: -37.792977, longitude: 144.959310 },
+                        { latitude: -37.793912, longitude: 144.958440 },
+                        { latitude: -37.795993, longitude: 144.958195 },
+                        { latitude: -37.796257, longitude: 144.960969 },
+                    ]}
+                    strokeColor="#000" // fallback for when `strokeColors` is not supported by the map-provider
+                    strokeColors={[
+                        '#7F0000',
+                        '#B24112',
+                        '#7F0000',
+                        '#7F0000',
+                    ]}
+                    strokeWidth={6}
+                />
                 </MapView>
 
                 <View style={styles.containerProfile}>
                     <Text style={styles.text}>Match Found</Text>
-                    <Text style={styles.text}>Meet At</Text>
+                    <Text style={styles.text}>Meet At Tin Alley, Parkville</Text>
                 </View>
 
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
