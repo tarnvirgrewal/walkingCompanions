@@ -23,10 +23,10 @@ class Review extends React.Component {
     }
     
     componentDidMount() {
-        const id = this.props.navigation.getParam('id', 'NO-ID');
+        const id = 1;
         const match = placeholder.find((item) => item.id == id);
-        let interests = [];
-        let name = 'Anon';
+        let interests = ['basketball', 'soccer', 'games'];
+        let name = 'Jeff';
         if ( match ) {
             interests = match.interests;
             name = match.name;
@@ -45,15 +45,15 @@ class Review extends React.Component {
                 }
                 <View  style={styles.section}>
                     <Button
-                        onPress={()=> this.handleOnPress('Map')}
+                        onPress={()=> this.handleOnPress('Thankyou')}
                         title="Great Converstaion"
                     />
                     <Button
-                        onPress={()=> this.handleOnPress('Map')}
+                        onPress={()=> this.handleOnPress('Thankyou')}
                         title="Easygoing"
                     />
                     <Button
-                        onPress={()=> this.handleOnPress('Map')}
+                        onPress={()=> this.handleOnPress('Thankyou')}
                         title="Good Companion"
                     />
                 </View>
