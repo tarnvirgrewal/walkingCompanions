@@ -34,7 +34,7 @@ class Profile extends React.Component {
             longitudeDelta: 0.0121,
           }}
         />
-        <Potential />
+        <Potential navigation={this.props.navigation}/>
       </View>
     );
   }

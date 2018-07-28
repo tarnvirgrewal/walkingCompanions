@@ -9,10 +9,10 @@ const styles = StyleSheet.create({
 
 class Candidates extends React.Component {
   handleOnClick = () => {
-    // const { navigate } = this.props.navigation;
+    const { navigate } = this.props.navigation;
 
-    Alert.alert('navigate');
-    // navigate('Home');
+    // Alert.alert('navigate');
+    navigate('MatchProfile', { id: this.props.id });
   }
 
   render() {

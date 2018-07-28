@@ -12,7 +12,6 @@ const App = createStackNavigator({
     // Home: { screen: Home },
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
-    Candidate: { screen: Candidate },
 });
 
 export default App;
