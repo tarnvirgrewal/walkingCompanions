@@ -6,14 +6,17 @@ import {
 import Home from './src/components/Home';
 import Map from './src/components/Map';
 import MatchProfile from "./src/components/MatchProfile";
-
 import Candidate from "./src/components/Candidates";
 import RouteDecision from "./src/components/RouteDecision";
+
 import MeetUp from "./src/components/MeetUp";
 import RouteNavi from "./src/components/RouteNavi";
 
-import ConfirmationPage from "./src/components/ConfirmationPage";
-import RequestDenied from "./src/components/RequestDenied";
+
+import ConfirmationPage from "./src/components/ConfirmationPage"
+import RequestDenied from "./src/components/RequestDenied"
+import UserMessages from "./src/components/UserMessages"
+
 
 const App = createStackNavigator({
     Home: { screen: Home },
@@ -24,7 +27,10 @@ const App = createStackNavigator({
     MeetUp: { screen: MeetUp },
     ConfirmationPage:{screen:ConfirmationPage},
     RequestDenied:{screen:RequestDenied},
-    RouteNavi: { screen:RouteNavi }
+    RouteNavi: { screen:RouteNavi },
+    UserMessages:{screen:UserMessages}
+
+
 });
 
 export default App;

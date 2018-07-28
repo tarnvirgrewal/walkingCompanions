@@ -30,6 +30,7 @@ class Home extends React.Component {
                 title="Decide Route"
                 color="#834738"
               />
+
               <Button
                 onPress={() => this.handleOnPress('MeetUp')}
                 title="Meet up location"
@@ -43,6 +44,14 @@ class Home extends React.Component {
                 onPress={()=> this.handleOnPress('RouteNavi')}
                 title="Navigate to Destination"
               />
+
+
+                <Button
+                    onPress={()=> this.handleOnPress('UserMessages')}
+                    title="Messaging"
+                />
+
+
             </View>
 
         );
