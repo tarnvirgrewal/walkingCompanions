@@ -6,11 +6,12 @@ import {
 import Home from './src/components/Home';
 import Map from './src/components/Map';
 import MatchProfile from "./src/components/MatchProfile";
-
 import Candidate from "./src/components/Candidates";
 import RouteDecision from "./src/components/RouteDecision";
 import ConfirmationPage from "./src/components/ConfirmationPage"
 import RequestDenied from "./src/components/RequestDenied"
+import Messaging from "./src/components/Messaging"
+
 const App = createStackNavigator({
     Home: { screen: Home },
     Map: { screen: Map },
@@ -18,7 +19,8 @@ const App = createStackNavigator({
     Candidate: { screen: Candidate },
     RouteDecision : { screen: RouteDecision},
     ConfirmationPage:{screen:ConfirmationPage},
-    RequestDenied:{screen:RequestDenied}
+    RequestDenied:{screen:RequestDenied},
+    Messaging:{screen:Messaging}
 
 });
 
