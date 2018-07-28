@@ -22,6 +22,10 @@ class Fire {
         return firebase.database().ref('messages');
     }
 
+    get userRef() {
+        return firebase.database().ref('user');
+    }
+
     parse = snapshot => {
         const { timestamp: numberStamp, text, user } = snapshot.val();
         const { key: _id } = snapshot;
@@ -43,6 +47,19 @@ class Fire {
     get timestamp() {
         return firebase.database.ServerValue.TIMESTAMP;
     }
+
+    updateUser = (requestAccepted, sentRequest) => {
+        this.userRef.update({
+            "requestAccepted": requestAccepted,
+            "sentRequest": sentRequest
+        });
+    };
+
+    getData = () => {
+        return firebase.database().ref('user');
+    };
+
+
     // send the message to the Backend
     send = messages => {
         for (let i = 0; i < messages.length; i++) {

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, Button} from 'react-native';
 import MapView,{ Marker } from 'react-native-maps';
-
+import Fire from './Fire';
+import {GiftedChat} from "react-native-gifted-chat";
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
@@ -70,10 +71,36 @@ class Decision extends React.Component {
           };
     }
 
-    handleOnPress= (component) => {
+    handleOnPress= (component, invitationAnswer) => {
         const { navigate } = this.props.navigation;
+
+        Fire.shared.updateUser(invitationAnswer, true);
         navigate(component);
+      /*  var config = {
+            apiKey: "AIzaSyCUqP5AB7PQ71f0qzpyGatyuJJ3OdV_BA0",
+            authDomain: "walkpals.firebaseapp.com",
+            databaseURL: "https://walkpals.firebaseio.com",
+            projectId: "walkpals",
+            storageBucket: "walkpals.appspot.com",
+            messagingSenderId: "604206196946"
+        };
+        firebase.initializeApp(config);
+        // To select data from firebase every time data has changed !
+        firebase.database().ref('user').on('value', (data) => {
+            console.log(data.toJSON());
+        });
+
+        // To Update a user
+        firebase.database().ref('user').update({
+            requestAccepted: invitationAnswer
+        });*/
+
+
       }
+
+    componentWillUnmount() {
+        Fire.shared.off();
+    }
 
     static navigationOptions = {
         title: 'RouteDecision',
@@ -100,14 +127,14 @@ class Decision extends React.Component {
                 </View>
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
                     <Button
-                        onPress={() => this.handleOnPress('MeetUp')}
+                        onPress={() => this.handleOnPress('MeetUp',true)}
                         title="Accept"
                         color="#841584"
                     />
                 </View>
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button
-                        onPress={() => this.handleOnPress('Map')}
+                        onPress={() => this.handleOnPress('Map',false)}
                         title="Decline"
                         color="#841584"
                     />

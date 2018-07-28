@@ -1,11 +1,9 @@
 import React from 'react';
 import {Text, View, Button, Image, StyleSheet} from 'react-native';
+import placeholder from '../staged/dummy';
 
 import * as Animatable from 'react-native-animatable';
-
-const placeholder = [
-    { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
-]
+import FitImage from 'react-native-fit-image';
 
 class MatchProfile extends React.Component {
     static navigationOptions = {
@@ -27,18 +25,21 @@ class MatchProfile extends React.Component {
         const match = placeholder.find((item) => item.id == id);
         let interests = [];
         let name = 'Anon';
+        let picture = require('../../res/Picture1.png');
         if ( match ) {
             interests = match.interests;
             name = match.name;
+            picture = match.src;
         }
-        this.setState({ id, interests, name });
+        this.setState({ id, interests, name, picture });
     }
 
     render() {
         return (
             <View style={styles.container} >
-                <Image style={styles.section} source={require('../../res/Picture1.png')} />
-                <Text style={[styles.section, styles.bold, styles.h1]} >{this.state.name}</Text>
+                <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />
+                <Animatable.Image animation="zoomIn" style={styles.section} source={require('../../res/Picture1.png')} />
+                <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
                     this.state.interests.map((interest) => <Text key={interest}>{interest}</Text>) 
@@ -51,12 +52,13 @@ class MatchProfile extends React.Component {
                 </View>
             </View> 
 
-        );
+        ); 
     }
 }
 const styles= StyleSheet.create({
     container:{
-        padding: 20,
+        top: 0,
+        // padding: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -72,6 +74,11 @@ const styles= StyleSheet.create({
     section: {
         margin: 20,
     },
+    image: {
+        borderRadius: 100,
+        height: 200,
+        width: 200,
+    }
 });
 
 export default MatchProfile;
