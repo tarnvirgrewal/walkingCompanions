@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, View, Button,Image, StyleSheet} from 'react-native';
+import Fire from './Fire';
 
 class ConfirmationPage extends React.Component {
     static navigationOptions = {
@@ -9,7 +10,17 @@ class ConfirmationPage extends React.Component {
         const {navigate} = this.props.navigation;
         navigate(page);
     };
+    componentDidMount () {
+        Fire.shared.getData().on('value', user => {
+            var response = user.val().requestAccepted;
+            console.log(response);
+            if(response===true){
+                const {navigate} = this.props.navigation;
+                navigate('MeetUp');
+            }
+        });
 
+    }
     render() {
         return (
             <View style={styles.container} >
