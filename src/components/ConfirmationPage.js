@@ -18,7 +18,7 @@ class ConfirmationPage extends React.Component {
                 <Text style={styles.section}>Please wait while we confirm</Text>
                 <View style={styles.section} >
                     <Button
-                        onPress={()=> this.handleOnPress('Home')}
+                        onPress={()=> this.handleOnPress('Map')}
                         title="Cancel"
                     />
                 </View>

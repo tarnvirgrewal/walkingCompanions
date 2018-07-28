@@ -39,7 +39,10 @@ class Home extends React.Component {
                 onPress={()=> this.handleOnPress('RequestDenied')}
                 title="Request Denied"
               />
-
+              <Button
+                onPress={()=> this.handleOnPress('RouteNavi')}
+                title="Navigate to Destination"
+              />
             </View>
 
         );

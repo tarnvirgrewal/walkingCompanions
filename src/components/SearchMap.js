@@ -63,7 +63,6 @@ class Potential extends React.Component {
                         onPress={this.props.pressedBtn}
                         title="Find a companion" 
                         color="#841584"
-                        accessibilityLabel="Learn more about this purple button"
                     />
                 </View> 
             </View>

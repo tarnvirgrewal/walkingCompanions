@@ -10,18 +10,21 @@ import MatchProfile from "./src/components/MatchProfile";
 import Candidate from "./src/components/Candidates";
 import RouteDecision from "./src/components/RouteDecision";
 import MeetUp from "./src/components/MeetUp";
+import RouteNavi from "./src/components/RouteNavi";
 
-import ConfirmationPage from "./src/components/ConfirmationPage"
-import RequestDenied from "./src/components/RequestDenied"
+import ConfirmationPage from "./src/components/ConfirmationPage";
+import RequestDenied from "./src/components/RequestDenied";
+
 const App = createStackNavigator({
-    // Home: { screen: Home },
+    Home: { screen: Home },
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
     Candidate: { screen: Candidate },
     RouteDecision: { screen: RouteDecision },
     MeetUp: { screen: MeetUp },
     ConfirmationPage:{screen:ConfirmationPage},
-    RequestDenied:{screen:RequestDenied}
+    RequestDenied:{screen:RequestDenied},
+    RouteNavi: { screen:RouteNavi }
 });
 
 export default App;
