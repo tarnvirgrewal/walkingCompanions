@@ -9,6 +9,10 @@ class MatchProfile extends React.Component {
     static navigationOptions = {
         title: 'MatchProfile',
     };
+    handleOnPress = (page) => {
+        const {navigate} = this.props.navigation;
+        navigate(page);
+    };
 
     state = {
         interests: [],
@@ -37,6 +41,10 @@ class MatchProfile extends React.Component {
                 { 
                     this.state.interests.map((interest) => <Text key={interest}>{interest}</Text>) 
                 }
+                <Button
+                    onPress={()=> this.handleOnPress('ConfirmationPage')}
+                    title="Match"
+                />
             </View>
 
         );

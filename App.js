@@ -6,12 +6,19 @@ import {
 import Home from './src/components/Home';
 import Map from './src/components/Map';
 import MatchProfile from "./src/components/MatchProfile";
-import Candidate from "./src/components/Candidates";
 
+import Candidate from "./src/components/Candidates";
+import RouteDecision from "./src/components/RouteDecision";
+import ConfirmationPage from "./src/components/ConfirmationPage"
+import RequestDenied from "./src/components/RequestDenied"
 const App = createStackNavigator({
-    // Home: { screen: Home },
+    Home: { screen: Home },
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
+    Candidate: { screen: Candidate },
+    RouteDecision : { screen: RouteDecision},
+    ConfirmationPage:{screen:ConfirmationPage},
+    RequestDenied:{screen:RequestDenied}
 });
 
 export default App;
