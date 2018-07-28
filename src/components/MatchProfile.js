@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View, Button,Image, StyleSheet} from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
 const placeholder = [
     { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
 ]
@@ -35,7 +37,7 @@ class MatchProfile extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image  source={require('../../res/Picture1.png')} />
+                <Animatable.Image animation="zoomIn" source={require('../../res/Picture1.png')} />
                 <Text style={styles.userName}>{this.state.name}</Text>
                 <Text>Interests</Text>
                 { 

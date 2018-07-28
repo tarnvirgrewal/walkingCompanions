@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text, View, TextInput, Button, StyleSheet, Dimensions } from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
+
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
@@ -52,7 +55,7 @@ class Potential extends React.Component {
     render() {
         return(
             <View style={styles.container}>
-                <View style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
+                <Animatable.View animation="bounceInDown" style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
                     <TextInput
                         style={styles.startInput}
                         onChangeText={(text) => this.setState({text})}
@@ -70,15 +73,15 @@ class Potential extends React.Component {
                     <Text style={styles.ETAtext}>
                         {this.state.ETA}
                     </Text>
-                </View> 
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+                </Animatable.View> 
+                <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button
                         onPress={this.props.pressedBtn}
                         title="Find a companion" 
                         color="#841584"
                         accessibilityLabel="Learn more about this purple button"
                     />
-                </View> 
+                </Animatable.View> 
             </View>
         );
     }

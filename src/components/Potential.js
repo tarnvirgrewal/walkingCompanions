@@ -3,6 +3,9 @@ import { Text, View, ScrollView, Button, StyleSheet, Dimensions } from 'react-na
 import Candidates from './Candidates';
 // import react-native-linear-gradient from 'react-native-linear-gradient';
 
+import * as Animatable from 'react-native-animatable';
+
+
 let ScreenWidth = Dimensions.get("window").width;
 
 const dummy = [
@@ -46,7 +49,7 @@ class Potential extends React.Component {
   }
   render() {
     return(
-      <View style={styles.container} >
+      <Animatable.View animation="bounceInUp" style={styles.container} >
         <View style={styles.textContainer}>
           <Text style={styles.text}>Nearby</Text>
         </View>
@@ -60,7 +63,7 @@ class Potential extends React.Component {
           })
         }
         </ScrollView>
-      </View>
+      </Animatable.View>
     );
   }
 }
