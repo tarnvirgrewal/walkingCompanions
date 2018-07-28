@@ -13,13 +13,14 @@ const styles = StyleSheet.create({
   profile: {
     width: 150,
     height: 150,
-    backgroundColor: 'grey'
+    backgroundColor: 'white',
+    margin: 20
   },
   containerProfile: {
-    backgroundColor: 'grey',
+    backgroundColor: 'white',
     alignSelf: 'stretch',
     alignItems: 'center',
-    height: 200
+    height: 300
   },
   text: {
     fontSize: 20,

@@ -11,32 +11,23 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 0,
       },
-    startInput: {
-        ...StyleSheet.absoluteFillObject,   
-        height: 30,
+    locationInput: {
+        // ...StyleSheet.absoluteFillObject,   
+        height: 40,
         padding: 5,
+        margin: 5,
         backgroundColor: 'white',
         borderRadius: 5,
-        borderColor: 'black',
-        borderWidth: 1,
-        textDecorationLine: 'none'
-      },
-      destInput: {
-        ...StyleSheet.absoluteFillObject,   
-        height: 30,
-        marginTop: 40,
-        padding: 5,
-        backgroundColor: 'white',
-        borderRadius: 5,
-        borderColor: 'black',
+        borderColor: '#eee',
         borderWidth: 1,
         textDecorationLine: 'none'
       },
       ETAtext: {
         // ...StyleSheet.absoluteFillObject,
         backgroundColor: 'white',
-        marginTop: 80,
+        borderColor: '#eee',
         width: 100,
+        margin: 5,
         padding: 5,
         borderRadius: 5,
         borderWidth: 1
@@ -46,7 +37,6 @@ class Potential extends React.Component {
 
     constructor(props) {
         super(props);  
-        this.state = { ETA: '[ ETA ]', text: '' };
     }
   
     render() {
@@ -54,22 +44,19 @@ class Potential extends React.Component {
             <View style={styles.container}>
                 <View style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
                     <TextInput
-                        style={styles.startInput}
-                        onChangeText={(text) => this.setState({text})}
-                        value={this.state.text}
+                        style={styles.locationInput}
+                        onChangeText={(text) => this.props.updateStart(text)}
+                        value={this.props.start}
                         placeholder="Starting point"
                         underlineColorAndroid="white"
                     />
                     <TextInput
-                        style={styles.destInput}
-                        onChangeText={(text) => this.setState({text})}
-                        value={this.state.text}
+                        style={styles.locationInput}
+                        onChangeText={(text) => this.props.updateDestination(text)}
+                        value={this.props.destination}
                         placeholder="Destination"
                         underlineColorAndroid="white"
                     />
-                    <Text style={styles.ETAtext}>
-                        {this.state.ETA}
-                    </Text>
                 </View> 
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button

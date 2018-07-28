@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Button,Image, StyleSheet} from 'react-native';
+import {Text, View, Button, Image, StyleSheet} from 'react-native';
 
 const placeholder = [
     { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
@@ -35,16 +35,18 @@ class MatchProfile extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image  source={require('../../res/Picture1.png')} />
-                <Text style={styles.userName}>{this.state.name}</Text>
-                <Text>Interests</Text>
+                <Image style={styles.section} source={require('../../res/Picture1.png')} />
+                <Text style={styles.section, styles.h1} >{this.state.name}</Text>
+                <Text style={styles.section, styles.bold, styles.h2} >Interests</Text>
                 { 
                     this.state.interests.map((interest) => <Text key={interest}>{interest}</Text>) 
                 }
-                <Button
-                    onPress={()=> this.handleOnPress('ConfirmationPage')}
-                    title="Match"
-                />
+                <View  style={styles.section}>
+                    <Button
+                        onPress={()=> this.handleOnPress('ConfirmationPage')}
+                        title="Match"
+                    />
+                </View>
             </View>
 
         );
@@ -56,9 +58,18 @@ const styles= StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    userName:{
-
-    }
+    h1:{
+        fontSize: 32,
+    },
+    h2: {
+        fontSize: 24
+    },
+    bold: {
+        fontWeight: 'bold',
+    },
+    section: {
+        margin: 20,
+    },
 });
 
 export default MatchProfile;
