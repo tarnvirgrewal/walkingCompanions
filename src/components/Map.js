@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
 class Profile extends React.Component {
   static navigationOptions = {
-    title: 'Profile',
+    title: 'Map',
   };
   render() {
     return (
