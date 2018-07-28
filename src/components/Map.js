@@ -56,7 +56,7 @@ class Map extends React.Component {
           }}
         />
         {!this.state.findBtnPressed && <SearchMap pressedBtn={this.showNearby}/>}
-        {this.state.findBtnPressed && <Potential/>}
+        {this.state.findBtnPressed && <Potential navigation={this.props.navigation}/>}
       </View>  
     );
   }
