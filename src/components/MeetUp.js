@@ -106,7 +106,7 @@ class Meet extends React.Component {
 
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button
-                        onPress={() => this.handleOnPress('Map')}
+                        onPress={() => this.handleOnPress('RouteNavi')}
                         title="Start Journey"
                         color="#841584"
                     />
