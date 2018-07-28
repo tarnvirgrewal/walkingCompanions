@@ -9,6 +9,8 @@ import MatchProfile from "./src/components/MatchProfile";
 
 import Candidate from "./src/components/Candidates";
 import RouteDecision from "./src/components/RouteDecision";
+import MeetUp from "./src/components/MeetUp";
+
 import ConfirmationPage from "./src/components/ConfirmationPage"
 import RequestDenied from "./src/components/RequestDenied"
 const App = createStackNavigator({
@@ -16,7 +18,8 @@ const App = createStackNavigator({
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
     Candidate: { screen: Candidate },
-    RouteDecision : { screen: RouteDecision},
+    RouteDecision: { screen: RouteDecision },
+    MeetUp: { screen: MeetUp },
     ConfirmationPage:{screen:ConfirmationPage},
     RequestDenied:{screen:RequestDenied}
 });
