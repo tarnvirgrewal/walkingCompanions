@@ -46,7 +46,7 @@ class Potential extends React.Component {
           this.state.nearby.map((candidate, index) => {
             const { id, name, eta } = candidate;
             return (
-              <Candidates id={id} name={name} eta={eta} key={`candidate-${index}`} />
+              <Candidates id={id} name={name} eta={eta} key={`candidate-${index}`} navigation={this.props.navigation} />
             );
           })
         }

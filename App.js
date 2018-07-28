@@ -22,7 +22,6 @@ const App = createStackNavigator({
     MeetUp: { screen: MeetUp },
     ConfirmationPage:{screen:ConfirmationPage},
     RequestDenied:{screen:RequestDenied}
-
 });
 
 export default App;
