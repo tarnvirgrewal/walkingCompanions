@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import {
+  createStackNavigator,
+} from 'react-navigation';
+import Home from './src/components/Home';
+import Map from './src/components/Map';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}} style={{width: 400, height: 400}} />
+const App = createStackNavigator({
+  Home: { screen: Home },
+  Map: { screen: Map },
+});
 
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+export default App;
 
 const styles = StyleSheet.create({
   container: {
