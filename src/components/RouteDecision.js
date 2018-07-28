@@ -1,14 +1,29 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, Image, StyleSheet, Button } from 'react-native';
 import MapView from 'react-native-maps';
 
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 1000,
-    width: 400,
+    flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  profile: {
+    width: 150,
+    height: 150,
+    backgroundColor: 'grey'
+  },
+  containerProfile: {
+    backgroundColor: 'grey',
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    height: 200
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   map: {
     ...StyleSheet.absoluteFillObject,
@@ -19,6 +34,16 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: "rgba(130,4,150, 0.9)",
   },
+  topRectangle: {
+    width: 500,
+    height: 250,
+    backgroundColor: 'grey'
+  },
+
+  buttonPosition: {
+      position: 'absolute',
+      paddingTop: 10
+  }
 });
 
 class Decision extends React.Component {
@@ -42,19 +67,45 @@ class Decision extends React.Component {
             },
           };
     }
-  static navigationOptions = {
-    title: 'RouteDecision',
-  };
-  render() {
-    return (
-        <View style={styles.container}>
-            <Text >My Profile</Text>
-            <MapView
-                region={this.state.region}
-                zoomEnabled={false}
-                style={styles.container}
-            />
-        </View>
+
+    handleOnPress= (component) => {
+        const { navigate } = this.props.navigation;
+        navigate(component);
+      }
+
+    static navigationOptions = {
+        title: 'RouteDecision',
+     };
+    render() {
+        return (
+            <View style={styles.container}>
+                <MapView
+                    region={this.state.region}
+                    zoomEnabled={false}
+                    style={styles.container}
+                />
+                <View style={styles.containerProfile}>
+                    <Image 
+                        style={styles.profile}
+                        source={require('../../res/Picture1.png')} 
+                    />
+                    <Text style={styles.text}>Has requested to travel with you!</Text>
+                </View>
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
+                    <Button
+                        onPress={() => this.handleOnPress('Map')}
+                        title="Accept"
+                        color="#841584"
+                    />
+                </View>
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+                    <Button
+                        onPress={() => this.handleOnPress('Map')}
+                        title="Decline"
+                        color="#841584"
+                    />
+                </View>
+            </View>  
     );
   }
 }
