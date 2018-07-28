@@ -1,52 +1,37 @@
-import React from 'react';
-import {Text, View,TextInput, Button,Image, StyleSheet,KeyboardAvoidingView} from 'react-native';
-import * as firebase from 'firebase';
-import { GiftedChat } from 'react-native-gifted-chat'
-
-
-class UserMessages extends React.Component {
+import React from "react";
+import { GiftedChat } from "react-native-gifted-chat";
+import {View, TextInput, Image, KeyboardAvoidingView, StyleSheet} from 'react-native';
+export default class UserMessages extends React.Component {
     state = {
-        messages: [],
+        messages: []
     };
 
-    componentWillMount() {
+    componentDidMount() {
         this.setState({
             messages: [
                 {
                     _id: 1,
-                    text: 'Hello developer',
+                    text: "I think we passed the first step of the tutorial. We will now need a Pusher account!",
                     createdAt: new Date(),
                     user: {
-                        _id: 2,
-                        name: 'React Native',
-                        avatar: 'https://placeimg.com/140/140/any',
-                    },
-                },
-            ],
-        })
-    }
-
-    onSend(messages = []) {
-        this.setState(previousState => ({
-            messages: GiftedChat.append(previousState.messages, messages),
-
-        }))
+                        _id: 1,
+                        name: "React Native",
+                        avatar: "https://placeimg.com/140/140/any"
+                    }
+                }
+            ]
+        });
     }
 
     render() {
-        return (
 
-            <GiftedChat
-                messages={this.state.messages}
-                onSend={messages => this.onSend(messages)}
-                user={{
-                    _id: 1,
-                }}
-            />
+        return(
 
+            <GiftedChat messages={this.state.messages} />
         )
+
     }
+
+
 }
 
-
-export default UserMessages;
