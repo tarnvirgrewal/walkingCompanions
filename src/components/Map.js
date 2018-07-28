@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, TextInput, StyleSheet } from 'react-native';
+import { Text, View, Button, TextInput, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
 
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 1000,
+    // height: 1000,
     // width: 500,
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 5,
     borderWidth: 1
+  },
+  FindButton: {
+
   }
 }); 
 
@@ -57,6 +60,9 @@ class Profile extends React.Component {
   static navigationOptions = {
     title: 'Map',
   };
+
+  handleOnPress = () => { }
+
   render() {
     return (
       <View style={styles.container}>
@@ -69,7 +75,7 @@ class Profile extends React.Component {
             longitudeDelta: 0.0121, 
           }}
         />
-        <View style={{...StyleSheet.absoluteFillObject, height: 30, position: 'absolute', margin: 15, padding: 4,}}>
+        <View style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
           <TextInput
             style={styles.startInput}
             onChangeText={(text) => this.setState({text})}
@@ -88,6 +94,14 @@ class Profile extends React.Component {
             {this.state.ETA}
           </Text>
         </View> 
+        <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+          <Button
+            onPress={this.handleOnPress}
+            title="Find someone"
+            color="#841584"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
       </View>  
     );
   }
