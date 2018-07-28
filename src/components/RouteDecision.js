@@ -42,8 +42,9 @@ const styles = StyleSheet.create({
   },
 
   buttonPosition: {
-      position: 'absolute',
-      paddingTop: 10
+      margin: 15,
+      backgroundColor: 'white',
+      width: 100
   }
 });
 
