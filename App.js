@@ -13,9 +13,12 @@ import MeetUp from "./src/components/MeetUp";
 import RouteNavi from "./src/components/RouteNavi";
 
 
-import ConfirmationPage from "./src/components/ConfirmationPage"
-import RequestDenied from "./src/components/RequestDenied"
-import UserMessages from "./src/components/UserMessages"
+import ConfirmationPage from "./src/components/ConfirmationPage";
+import RequestDenied from "./src/components/RequestDenied";
+import UserMessages from "./src/components/UserMessages";
+
+import Review from "./src/components/Review";
+import Thankyou from "./src/components/Thankyou";
 
 
 const App = createStackNavigator({
@@ -28,9 +31,9 @@ const App = createStackNavigator({
     ConfirmationPage:{screen:ConfirmationPage},
     RequestDenied:{screen:RequestDenied},
     RouteNavi: { screen:RouteNavi },
-    UserMessages:{screen:UserMessages}
-
-
+    UserMessages:{screen:UserMessages},
+    Review: { screen: Review },
+    Thankyou: { screen: Thankyou },
 });
 
 export default App;
