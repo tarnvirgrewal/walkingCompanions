@@ -27,10 +27,16 @@ class Home extends React.Component {
 
                 />
                 <Button
+
                 onPress={() => this.handleOnPress('RouteDecision')}
                 title="Decide Route"
                 color="#834738"
               />
+                <Button
+                    onPress={()=> this.handleOnPress('RequestDenied')}
+                    title="Request Denied"
+                />
+
             </View>
 
         );
