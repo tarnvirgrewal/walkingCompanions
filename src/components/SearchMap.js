@@ -61,11 +61,10 @@ class Potential extends React.Component {
                         underlineColorAndroid="white"
                     />
                 </Animatable.View> 
-                <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+                <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 20}}>
                     <Button
                         onPress={this.props.pressedBtn}
                         title="Find a companion" 
-                        color="#841584"
                     />
                 </Animatable.View>
             </View> 

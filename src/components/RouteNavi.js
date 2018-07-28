@@ -83,11 +83,11 @@ class Route extends React.Component {
                 > 
                 <Marker
                     coordinate={ {latitude: -37.796265,longitude: 144.960954 }}
-                    pinColor = 'blue'
+                    pinColor = '#ace0f9'
                 />
                 <Marker
                     coordinate={ {latitude: -37.809944, longitude: 144.969788 }}
-                    pinColor = 'black'
+                    pinColor = '#fff1eb'
                 />
                 <Polyline
                     coordinates={[
@@ -120,7 +120,6 @@ class Route extends React.Component {
                     <Button
                         onPress={() => this.handleOnPress('Review')}
                         title=" Finish "
-                        color="#841584"
                     />
                 </View>
             </View>

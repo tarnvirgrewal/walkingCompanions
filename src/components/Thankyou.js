@@ -32,7 +32,8 @@ const styles= StyleSheet.create({
         justifyContent: 'center'
     },
     section:{
-        margin: 20
+        margin: 20,
+        fontSize: 30
     }
 });
 

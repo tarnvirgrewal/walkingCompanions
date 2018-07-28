@@ -38,11 +38,10 @@ class Review extends React.Component {
         return (
             <View style={styles.container} >
                 <Image style={styles.section} source={require('../../res/Picture1.png')} />
-                <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
-                <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
-                { 
-                    this.state.interests.map((interest) => <Text key={interest}>{interest}</Text>) 
-                }
+                <Text style={[styles.section, styles.bold, styles.h1]} >{this.state.name}</Text>
+                <Text style={[styles.section, styles.h2]} >Leave a compliment for your</Text>
+                <Text style={[styles.section, styles.h2]} >Walking Companion </Text>
+
                 <View  style={styles.section}>
                     <Button
                         onPress={()=> this.handleOnPress('Thankyou')}

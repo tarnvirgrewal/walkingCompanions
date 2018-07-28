@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   profile: {
-    width: 150,
-    height: 150,
-    backgroundColor: 'grey'
+    width: 100,
+    height: 100,
+    backgroundColor: '#ace0f9'
   },
   containerProfile: {
-    backgroundColor: 'grey',
+    backgroundColor: '#ace0f9',
     alignSelf: 'stretch',
     alignItems: 'center',
     height: 200
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: 'bold',
+    alignItems: 'center',
   },
   map: {
     ...StyleSheet.absoluteFillObject,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   topRectangle: {
     width: 500,
     height: 250,
-    backgroundColor: 'grey'
+    backgroundColor: '#ace0f9'
   },
 
   buttonPosition: {
@@ -86,11 +87,11 @@ class Meet extends React.Component {
                     >
                     <Marker
                         coordinate={this.state.markers[0].coordinate}
-                        pinColor = 'black'
+                        pinColor = '#fff1eb'
                     />
                     <Marker
                         coordinate={{ latitude: -37.792977, longitude: 144.959310 }}
-                        pinColor = 'black'
+                        pinColor = '#ace0f9'
                     />
                     <Polyline
                     coordinates={[
@@ -111,23 +112,34 @@ class Meet extends React.Component {
                 </MapView>
 
                 <View style={styles.containerProfile}>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
                     <Text style={styles.text}>Match Found</Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
                     <Text style={styles.text}>Meet At Tin Alley, Parkville</Text>
+                    <Image 
+                        style={styles.profile}
+                        source={require('../../res/Picture1.png')} 
+                    />
+                </View>
+
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 100}}>
+                    <Button
+                        onPress={() => this.handleOnPress('UserMessages')}
+                        title=" Message Pal "
+                    />
                 </View>
 
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
                     <Button
-                        onPress={() => this.handleOnPress('UserMessages')}
-                        title=" Message Pal "
-                        color="#841584"
-                    />
-                </View>
-
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
-                    <Button
                         onPress={() => this.handleOnPress('RouteNavi')}
                         title="Start Journey"
-                        color="#841584"
                     />
                 </View>
             </View>  
