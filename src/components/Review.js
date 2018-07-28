@@ -1,11 +1,13 @@
 import React from 'react';
 import {Text, View, Button, Image, StyleSheet} from 'react-native';
-import placeholder from '../staged/dummy';
 
 import * as Animatable from 'react-native-animatable';
-import FitImage from 'react-native-fit-image';
 
-class MatchProfile extends React.Component {
+const placeholder = [
+    { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
+]
+
+class Review extends React.Component {
     static navigationOptions = {
         title: 'MatchProfile',
     };
@@ -21,24 +23,21 @@ class MatchProfile extends React.Component {
     }
     
     componentDidMount() {
-        const id = this.props.navigation.getParam('id', 'NO-ID');
+        const id = 1;
         const match = placeholder.find((item) => item.id == id);
-        let interests = [];
-        let name = 'Anon';
-        let picture = require('../../res/Picture1.png');
+        let interests = ['basketball', 'soccer', 'games'];
+        let name = 'Jeff';
         if ( match ) {
             interests = match.interests;
             name = match.name;
-            picture = match.src;
         }
-        this.setState({ id, interests, name, picture });
+        this.setState({ id, interests, name });
     }
 
     render() {
         return (
             <View style={styles.container} >
-                <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />
-                <Animatable.Image animation="zoomIn" style={styles.section} source={require('../../res/Picture1.png')} />
+                <Image style={styles.section} source={require('../../res/Picture1.png')} />
                 <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
@@ -46,19 +45,26 @@ class MatchProfile extends React.Component {
                 }
                 <View  style={styles.section}>
                     <Button
-                        onPress={()=> this.handleOnPress('ConfirmationPage')}
-                        title="Match"
+                        onPress={()=> this.handleOnPress('Thankyou')}
+                        title="Great Converstaion"
+                    />
+                    <Button
+                        onPress={()=> this.handleOnPress('Thankyou')}
+                        title="Easygoing"
+                    />
+                    <Button
+                        onPress={()=> this.handleOnPress('Thankyou')}
+                        title="Good Companion"
                     />
                 </View>
             </View> 
 
-        ); 
+        );
     }
 }
 const styles= StyleSheet.create({
     container:{
-        top: 0,
-        // padding: 20,
+        padding: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -74,11 +80,6 @@ const styles= StyleSheet.create({
     section: {
         margin: 20,
     },
-    image: {
-        borderRadius: 100,
-        height: 200,
-        width: 200,
-    }
 });
 
-export default MatchProfile;
+export default Review;
