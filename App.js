@@ -5,10 +5,12 @@ import {
 } from 'react-navigation';
 import Home from './src/components/Home';
 import Map from './src/components/Map';
+import RouteDecision from './src/components/RouteDecision';
 
 const App = createStackNavigator({
   Home: { screen: Home },
   Map: { screen: Map },
+  RouteDecision : { screen: RouteDecision},
 });
 
 export default App;

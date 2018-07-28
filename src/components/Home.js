@@ -6,9 +6,9 @@ class Home extends React.Component {
     title: 'Welcome Home',
   };
 
-  handleOnPress = () => {
+  handleOnPress= (component) => {
     const { navigate } = this.props.navigation;
-    navigate('Map');
+    navigate(component);
   }
 
   render() {
@@ -16,10 +16,15 @@ class Home extends React.Component {
       <View>
         <Text >This is my home</Text>
         <Button
-          onPress={this.handleOnPress}
-          title="Go to Map"
+          onPress={() => this.handleOnPress('Map')}
+          title="Map"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
+        />
+        <Button
+          onPress={() => this.handleOnPress('RouteDecision')}
+          title="Decide Route"
+          color="#834738"
         />
       </View>
     );
