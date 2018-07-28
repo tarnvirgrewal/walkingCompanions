@@ -24,13 +24,17 @@ class Home extends React.Component {
                 <Button
                     onPress={()=> this.handleOnPress('MatchProfile')}
                     title="look at user profile"
-
                 />
                 <Button
                 onPress={() => this.handleOnPress('RouteDecision')}
                 title="Decide Route"
                 color="#834738"
-              />
+                />
+                <Button
+                onPress={() => this.handleOnPress('MeetUp')}
+                title="Meet up location"
+                color="#834738"
+                />
             </View>
 
         );
