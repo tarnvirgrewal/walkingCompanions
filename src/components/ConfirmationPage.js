@@ -18,6 +18,10 @@ class ConfirmationPage extends React.Component {
                 const {navigate} = this.props.navigation;
                 navigate('MeetUp');
             }
+            else if(response===false){
+                const {navigate} = this.props.navigation;
+                navigate('RequestDenied');
+            }
         });
 
     }
