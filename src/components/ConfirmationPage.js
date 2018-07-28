@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, View, Button,Image, StyleSheet} from 'react-native';
 
-class MatchProfile extends React.Component {
+class ConfirmationPage extends React.Component {
     static navigationOptions = {
-        title: 'MatchProfile',
+        title: 'Confirmation Page',
     };
     handleOnPress = (page) => {
         const {navigate} = this.props.navigation;
@@ -13,14 +13,14 @@ class MatchProfile extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image  source={require('../../res/Picture1.png')} />
-                <Text style={styles.userName}>Danish Bassi</Text>
-                <Text>Interests</Text>
-                <Text>Likes to talk long walks at the beach.</Text>
-                <Text>Cheese is great</Text>
+
+                <Image  source={require('../../res/timer.png')} />
+                <Text>Please wait while we confirm</Text>
+
+
                 <Button
-                    onPress={()=> this.handleOnPress('ConfirmationPage')}
-                    title="Match"
+                    onPress={()=> this.handleOnPress('Home')}
+                    title="Cancel"
                 />
             </View>
 
@@ -29,7 +29,7 @@ class MatchProfile extends React.Component {
 }
 const styles= StyleSheet.create({
     container:{
-
+        flex:1,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -38,4 +38,4 @@ const styles= StyleSheet.create({
     }
 });
 
-export default MatchProfile;
+export default ConfirmationPage;

@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, View, Button,Image, StyleSheet} from 'react-native';
 
-class MatchProfile extends React.Component {
+class RequestDenied extends React.Component {
     static navigationOptions = {
-        title: 'MatchProfile',
+        title: 'Sorry :(',
     };
     handleOnPress = (page) => {
         const {navigate} = this.props.navigation;
@@ -13,14 +13,15 @@ class MatchProfile extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image  source={require('../../res/Picture1.png')} />
-                <Text style={styles.userName}>Danish Bassi</Text>
-                <Text>Interests</Text>
-                <Text>Likes to talk long walks at the beach.</Text>
-                <Text>Cheese is great</Text>
+
+
+                <Text>Sorry, your request was denied :(</Text>
+                <Text>Find another match?</Text>
+
+
                 <Button
-                    onPress={()=> this.handleOnPress('ConfirmationPage')}
-                    title="Match"
+                    onPress={()=> this.handleOnPress('Home')}
+                    title="Go Back"
                 />
             </View>
 
@@ -29,7 +30,7 @@ class MatchProfile extends React.Component {
 }
 const styles= StyleSheet.create({
     container:{
-
+        flex:1,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -38,4 +39,4 @@ const styles= StyleSheet.create({
     }
 });
 
-export default MatchProfile;
+export default RequestDenied;
