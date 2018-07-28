@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView, Button, StyleSheet, Dimensions } from 'react-native';
 import Candidates from './Candidates';
+// import react-native-linear-gradient from 'react-native-linear-gradient';
 
 let ScreenWidth = Dimensions.get("window").width;
 
@@ -18,7 +19,7 @@ const dummy = [
 
 const styles = StyleSheet.create({
     container: {
-      height: 300,
+      height: 350,
       backgroundColor: '#ace0f9', //'linear-gradient(#fff1eb, #ace0f9)',
       width: ScreenWidth,
       position: 'absolute',
@@ -26,7 +27,13 @@ const styles = StyleSheet.create({
       bottom: 0,
     },
     text: {
-      color: 'white',
+      color: 'black',
+      fontSize: 32,
+      // fontWeight: 'bold',
+      padding: 10
+    },
+    textContainer: {
+      alignItems: 'center',
     },
     candidateContainer: {
       flexDirection:"row",
@@ -40,7 +47,9 @@ class Potential extends React.Component {
   render() {
     return(
       <View style={styles.container} >
-        <Text style={styles.text}>Neaby</Text>
+        <View style={styles.textContainer}>
+          <Text style={styles.text}>Nearby</Text>
+        </View>
         <ScrollView horizontal={true} style={styles.candidateContainer} >
         {
           this.state.nearby.map((candidate, index) => {
