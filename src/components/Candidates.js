@@ -9,7 +9,10 @@ const styles = StyleSheet.create({
 
 class Candidates extends React.Component {
   handleOnClick = () => {
-    Alert.alert("save me");
+    // const { navigate } = this.props.navigation;
+
+    Alert.alert('navigate');
+    // navigate('Home');
   }
 
   render() {
