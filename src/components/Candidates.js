@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableHighlight, View, Text, StyleSheet, Alert } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -8,12 +8,18 @@ const styles = StyleSheet.create({
 })
 
 class Candidates extends React.Component {
+  handleOnClick = () => {
+    Alert.alert("save me");
+  }
+
   render() {
     return(
-      <View style={styles.container} >
-        <Text>🤓</Text>
-        <Text>{this.props.eta} min</Text>
-      </View>
+      <TouchableHighlight onPress={this.handleOnClick} >
+        <View style={styles.container} >
+          <Text>🤓</Text>
+          <Text>{this.props.eta} min</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 }
