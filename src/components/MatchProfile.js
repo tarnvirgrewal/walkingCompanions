@@ -8,9 +8,9 @@ class MatchProfile extends React.Component {
 
     render() {
         return (
-            <View >
-                <Image source={require('../../res/Picture1.png')} />
-                <Text>Open up App.js to start working on your app!</Text>
+            <View style={styles.container} >
+                <Image  source={require('../../res/Picture1.png')} />
+                <Text style={styles.userName}>Danish</Text>
                 <Text>Changes you make will automatically reload.</Text>
                 <Text>Shake your phone to open the developer menu.</Text>
             </View>
@@ -18,5 +18,15 @@ class MatchProfile extends React.Component {
         );
     }
 }
+const styles= StyleSheet.create({
+    container:{
+
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    userName:{
+
+    }
+});
 
 export default MatchProfile;
