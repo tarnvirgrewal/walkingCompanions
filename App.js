@@ -13,6 +13,7 @@ const App = createStackNavigator({
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
     Candidate: { screen: Candidate },
+    RouteDecision : { screen: RouteDecision},
 });
 
 export default App;

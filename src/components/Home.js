@@ -26,9 +26,14 @@ class Home extends React.Component {
                     title="look at user profile"
 
                 />
+                <Button
+                onPress={() => this.handleOnPress('RouteDecision')}
+                title="Decide Route"
+                color="#834738"
+              />
             </View>
 
         );
-    }
+      }
 }
 export default Home;
