@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text, View, TextInput, Button, StyleSheet, Dimensions } from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
+
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
@@ -42,13 +45,13 @@ class Potential extends React.Component {
     render() {
         return(
             <View style={styles.container}>
-                <View style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
+                <Animatable.View animation="bounceInDown" style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
                     <TextInput
                         style={styles.locationInput}
                         onChangeText={(text) => this.props.updateStart(text)}
                         value={this.props.start}
                         placeholder="Starting point"
-                        underlineColorAndroid="white"
+                        underlineColorAndroid="white" 
                     />
                     <TextInput
                         style={styles.locationInput}
@@ -57,15 +60,15 @@ class Potential extends React.Component {
                         placeholder="Destination"
                         underlineColorAndroid="white"
                     />
-                </View> 
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+                </Animatable.View> 
+                <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button
                         onPress={this.props.pressedBtn}
                         title="Find a companion" 
                         color="#841584"
                     />
-                </View> 
-            </View>
+                </Animatable.View>
+            </View> 
         );
     }
 }

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
-  },
+  }, 
 }); 
 
 class Map extends React.Component {

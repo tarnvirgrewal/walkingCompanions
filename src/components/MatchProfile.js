@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View, Button, Image, StyleSheet} from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
 const placeholder = [
     { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
 ]
@@ -36,8 +38,8 @@ class MatchProfile extends React.Component {
         return (
             <View style={styles.container} >
                 <Image style={styles.section} source={require('../../res/Picture1.png')} />
-                <Text style={styles.section, styles.h1} >{this.state.name}</Text>
-                <Text style={styles.section, styles.bold, styles.h2} >Interests</Text>
+                <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
+                <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
                     this.state.interests.map((interest) => <Text key={interest}>{interest}</Text>) 
                 }
@@ -47,7 +49,7 @@ class MatchProfile extends React.Component {
                         title="Match"
                     />
                 </View>
-            </View>
+            </View> 
 
         );
     }
