@@ -6,20 +6,20 @@ class Home extends React.Component {
     title: 'Welcome Home',
   };
 
-  handleOnPress = () => {
-    const { navigate } = this.props.navigation;
-    navigate('Map');
-  }
+  handleOnPress = (page) => {
+      const {navigate} = this.props.navigation;
+      navigate(page);
+  };
 
   render() {
     return (
       <View>
         <Text >This is my home</Text>
+
         <Button
-          onPress={this.handleOnPress}
-          title="Go to Map"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
+            onPress={()=> this.handleOnPress('MatchProfile')}
+            title="look at user profile"
+
         />
       </View>
     );

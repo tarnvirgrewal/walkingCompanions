@@ -5,10 +5,12 @@ import {
 } from 'react-navigation';
 import Home from './src/components/Home';
 import Map from './src/components/Map';
+import MatchProfile from "./src/components/MatchProfile";
 
 const App = createStackNavigator({
   Home: { screen: Home },
   Map: { screen: Map },
+  MatchProfile:{screen: MatchProfile}
 });
 
 export default App;
