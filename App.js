@@ -6,11 +6,12 @@ import {
 import Home from './src/components/Home';
 import Map from './src/components/Map';
 import MatchProfile from "./src/components/MatchProfile";
-
+import ConfirmationPage from "./src/components/ConfirmationPage"
 const App = createStackNavigator({
     Home: { screen: Home },
     Map: { screen: Map },
-    MatchProfile:{screen: MatchProfile}
+    MatchProfile:{screen: MatchProfile},
+    ConfirmationPage:{screen:ConfirmationPage}
 });
 
 export default App;
