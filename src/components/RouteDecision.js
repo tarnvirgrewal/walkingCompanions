@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, Button } from 'react-native';
-import MapView from 'react-native-maps';
+import { Text, View, Image, StyleSheet, Button} from 'react-native';
+import MapView,{ Marker } from 'react-native-maps';
 
 const styles = StyleSheet.create({
   container: {
@@ -83,7 +83,12 @@ class Decision extends React.Component {
                     region={this.state.region}
                     zoomEnabled={false}
                     style={styles.container}
+                >
+                <Marker
+                    coordinate={this.state.region}
+                    image={require('../../res/Picture1.png')}
                 />
+                </MapView>
                 <View style={styles.containerProfile}>
                     <Image 
                         style={styles.profile}

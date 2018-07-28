@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, Button } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 
 const styles = StyleSheet.create({
   container: {
@@ -84,7 +84,13 @@ class Meet extends React.Component {
                     zoomEnabled={false}
                     style={styles.container}
                     annotations={this.state.markers[0]}
-                />
+                    >
+                    <Marker
+                        coordinate={this.state.region}
+                        pinColor = 'black'
+                    />
+                </MapView>
+
                 <View style={styles.containerProfile}>
                     <Text style={styles.text}>Match Found</Text>
                     <Text style={styles.text}>Meet At</Text>
