@@ -1,13 +1,16 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
+import Potential from './Potential';
+
+let ScreenHeight = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
-    height: 1000,
-    width: 400,
-    justifyContent: 'flex-end',
+    height: ScreenHeight,
+    alignSelf: 'stretch',
+    // justifyContent: 'flex-end',
     alignItems: 'center',
 },
   map: {
@@ -22,7 +25,6 @@ class Profile extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text >My Profile</Text>
         <MapView
           style={styles.map}
           region={{
@@ -32,6 +34,7 @@ class Profile extends React.Component {
             longitudeDelta: 0.0121,
           }}
         />
+        <Potential />
       </View>
     );
   }

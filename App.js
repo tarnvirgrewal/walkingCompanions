@@ -7,7 +7,6 @@ import Home from './src/components/Home';
 import Map from './src/components/Map';
 
 const App = createStackNavigator({
-  Home: { screen: Home },
   Map: { screen: Map },
 });
 
