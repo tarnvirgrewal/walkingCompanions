@@ -10,7 +10,7 @@ import Candidate from "./src/components/Candidates";
 import RouteDecision from "./src/components/RouteDecision";
 import ConfirmationPage from "./src/components/ConfirmationPage"
 import RequestDenied from "./src/components/RequestDenied"
-import Messaging from "./src/components/Messaging"
+import UserMessages from "./src/components/UserMessages"
 
 const App = createStackNavigator({
     Home: { screen: Home },
@@ -20,7 +20,7 @@ const App = createStackNavigator({
     RouteDecision : { screen: RouteDecision},
     ConfirmationPage:{screen:ConfirmationPage},
     RequestDenied:{screen:RequestDenied},
-    Messaging:{screen:Messaging}
+    UserMessages:{screen:UserMessages}
 
 });
 

@@ -37,7 +37,7 @@ class Home extends React.Component {
                     title="Request Denied"
                 />
                 <Button
-                    onPress={()=> this.handleOnPress('Messaging')}
+                    onPress={()=> this.handleOnPress('UserMessages')}
                     title="Messaging"
                 />
 
