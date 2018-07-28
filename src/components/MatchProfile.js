@@ -1,11 +1,8 @@
 import React from 'react';
 import {Text, View, Button, Image, StyleSheet} from 'react-native';
+import placeholder from '../staged/dummy';
 
 import * as Animatable from 'react-native-animatable';
-
-const placeholder = [
-    { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
-]
 
 class MatchProfile extends React.Component {
     static navigationOptions = {
@@ -27,17 +24,19 @@ class MatchProfile extends React.Component {
         const match = placeholder.find((item) => item.id == id);
         let interests = [];
         let name = 'Anon';
+        let picture = require('../../res/Picture1.png');
         if ( match ) {
             interests = match.interests;
             name = match.name;
+            picture = match.src;
         }
-        this.setState({ id, interests, name });
+        this.setState({ id, interests, name, picture });
     }
 
     render() {
         return (
             <View style={styles.container} >
-                <Image style={styles.section} source={require('../../res/Picture1.png')} />
+                <Image style={styles.section, styles.image} source={this.state.picture} />
                 <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
@@ -72,6 +71,11 @@ const styles= StyleSheet.create({
     section: {
         margin: 20,
     },
+    image: {
+        borderRadius: 100,
+        height: 200,
+        width: 200,
+    }
 });
 
 export default MatchProfile;

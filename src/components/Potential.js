@@ -2,24 +2,20 @@ import React from 'react';
 import { Text, View, ScrollView, Button, StyleSheet, Dimensions } from 'react-native';
 import Candidates from './Candidates';
 // import LinearGradient from 'react-native-linear-gradient';
+import dummy from '../staged/dummy';
 
 import * as Animatable from 'react-native-animatable';
 
 
 let ScreenWidth = Dimensions.get("window").width;
 
-const dummy = [
-  { id: 1, name: "Jeff", eta: 5 },
-  { id: 2, name: "William", eta: 15 },
-  { id: 3, name: "Sandy", eta: 25 },
-  { id: 4, name: "Jeff", eta: 5 },
-];
 
 const styles = StyleSheet.create({
     container: {
       height: 300,
       backgroundColor: '#fff', //'linear-gradient(#fff1eb, #ace0f9)',
-      borderRadius: 20,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
       width: ScreenWidth,
       position: 'absolute',
       padding: 20,
@@ -57,9 +53,9 @@ class Potential extends React.Component {
         <ScrollView horizontal={true} style={styles.candidateContainer} >
         {
           this.state.nearby.map((candidate, index) => {
-            const { id, name, eta } = candidate;
+            const { id, name, eta, src } = candidate;
             return (
-              <Candidates id={id} name={name} eta={eta} key={`candidate-${index}`} navigation={this.props.navigation} />
+              <Candidates id={id} name={name} eta={eta} key={`candidate-${index}`} src={src} navigation={this.props.navigation} />
             );
           })
         }

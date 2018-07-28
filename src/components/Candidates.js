@@ -26,9 +26,9 @@ class Candidates extends React.Component {
 
   render() {
     return(
-      <TouchableHighlight onPress={this.handleOnClick} >
+      <TouchableHighlight onPress={this.handleOnClick} underlayColor='#fff'>
         <View style={styles.container} >
-          <Image style={styles.image}  source={require('../../res/Picture1.png')} />
+          <Image style={styles.image}  source={this.props.src} />
           <Text style={styles.eta} >{this.props.eta} min</Text>
         </View>
       </TouchableHighlight>
