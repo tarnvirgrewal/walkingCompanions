@@ -118,7 +118,7 @@ class Route extends React.Component {
             </MapView>
                 <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
                     <Button
-                        onPress={() => this.handleOnPress('Map')}
+                        onPress={() => this.handleOnPress('Review')}
                         title=" Finish "
                         color="#841584"
                     />
