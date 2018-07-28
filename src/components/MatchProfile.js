@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, Button, Image, StyleSheet} from 'react-native';
 
 import * as Animatable from 'react-native-animatable';
+import FitImage from 'react-native-fit-image';
 
 const placeholder = [
     { id: 1, name: 'Jeff', interests: ['basketball', 'soccer', 'games']}
@@ -37,7 +38,8 @@ class MatchProfile extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image style={styles.section} source={require('../../res/Picture1.png')} />
+                <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />
+                <Animatable.Image animation="zoomIn" style={styles.section} source={require('../../res/Picture1.png')} />
                 <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
@@ -51,12 +53,13 @@ class MatchProfile extends React.Component {
                 </View>
             </View> 
 
-        );
+        ); 
     }
 }
 const styles= StyleSheet.create({
     container:{
-        padding: 20,
+        top: 0,
+        // padding: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },

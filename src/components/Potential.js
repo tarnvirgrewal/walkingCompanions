@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, View, ScrollView, Button, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, ScrollView, Image, StyleSheet, Dimensions } from 'react-native';
 import Candidates from './Candidates';
 // import LinearGradient from 'react-native-linear-gradient';
 
 import * as Animatable from 'react-native-animatable';
+import FitImage from 'react-native-fit-image';
 
 
 let ScreenWidth = Dimensions.get("window").width;
@@ -51,10 +52,11 @@ class Potential extends React.Component {
   render() {
     return(
       <Animatable.View animation="bounceInUp" style={styles.container} >
+        <Image resizeMode='cover' style={{position: 'absolute', height: 300, width: ScreenWidth, borderRadius: 20}} source={require('../../res/background_gradient.png')} />
         <View style={styles.textContainer}>
           <Text style={styles.text}>Nearby</Text>
         </View>
-        <ScrollView horizontal={true} style={styles.candidateContainer} >
+        <ScrollView horizontal={true} style={styles.candidateContainer} > 
         {
           this.state.nearby.map((candidate, index) => {
             const { id, name, eta } = candidate;
