@@ -106,7 +106,7 @@ class Decision extends React.Component {
     }
 
     static navigationOptions = {
-        title: 'RouteDecision',
+        title: 'Route',
      };
     render() {
         return (

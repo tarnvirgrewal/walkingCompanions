@@ -60,7 +60,7 @@ class Map extends React.Component {
   }
 
   static navigationOptions = {
-    title: 'Map',
+    title: 'Walking Pal',
   };
 
   showNearby = () => { 
