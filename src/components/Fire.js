@@ -1,5 +1,9 @@
 import firebase from 'firebase'; // Version can be specified in package.json
 
+console.ignoredYellowBox = [
+    'Setting a timer'
+]
+
 class Fire {
     constructor() {
         this.init();

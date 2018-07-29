@@ -21,7 +21,7 @@ class Candidates extends React.Component {
     const { navigate } = this.props.navigation;
 
     // Alert.alert('navigate');
-    navigate('MatchProfile', { id: this.props.id });
+    navigate('MatchProfile', { id: this.props.id, hideNearby: this.props.hideNearby });
   }
 
   render() {

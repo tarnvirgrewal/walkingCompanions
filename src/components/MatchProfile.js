@@ -11,6 +11,8 @@ class MatchProfile extends React.Component {
     };
     handleOnPress = (page) => {
         const {navigate} = this.props.navigation;
+        const finishSearch = this.props.navigation.getParam('hideNearby', () => {});
+        finishSearch();
         navigate(page);
     };
 

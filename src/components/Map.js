@@ -92,7 +92,7 @@ class Map extends React.Component {
           start={this.state.start}
           destination={this.state.destination}
         />}
-        {this.state.findBtnPressed && <Potential navigation={this.props.navigation} />}
+        {this.state.findBtnPressed && <Potential navigation={this.props.navigation} hideNearby={this.hideNearby} />}
       </View>  
     );
   }

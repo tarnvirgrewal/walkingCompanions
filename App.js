@@ -22,7 +22,7 @@ import Thankyou from "./src/components/Thankyou";
 
 
 const App = createStackNavigator({
-    Home: { screen: Map },
+    // Home: { screen: Home },
     Map: { screen: Map },
     MatchProfile:{ screen: MatchProfile },
     Candidate: { screen: Candidate },
