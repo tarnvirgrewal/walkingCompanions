@@ -1,8 +1,13 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, Button} from 'react-native';
+import { Text, View, Image, StyleSheet, Button, Dimensions} from 'react-native';
 import MapView,{ Marker } from 'react-native-maps';
 import Fire from './Fire';
 import {GiftedChat} from "react-native-gifted-chat";
+
+
+let ScreenWidth = Dimensions.get("window").width;
+
+
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
@@ -19,7 +24,7 @@ const styles = StyleSheet.create({
   containerProfile: {
     alignSelf: 'stretch',
     alignItems: 'center',
-    height: 250
+    height: 300
   },
   text: {
     fontSize: 20,
@@ -118,7 +123,7 @@ class Decision extends React.Component {
                 />
                 </MapView>
                 <View style={styles.containerProfile}>
-                    <Image resizeMode='cover' style={{position: 'absolute', height: 250}} source={require('../../res/background_gradient.png')} />
+                    <Image resizeMode='cover' style={{position: 'absolute', height: 250, width: ScreenWidth, borderRadius: 20}} source={require('../../res/background_gradient.png')} />
                     <Image 
                         style={styles.profile}
                         source={require('../../res/Picture1.png')} 
