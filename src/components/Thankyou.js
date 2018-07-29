@@ -13,7 +13,8 @@ class Thankyou extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Text style={styles.section}>Thank you for walking with WalkingPal</Text>
+                <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />
+                <Text style={styles.section}>Thank you for your compliments. You just made someone's day!</Text>
                 <View style={styles.section} >
                     <Button
                         onPress={()=> this.handleOnPress('Map')}

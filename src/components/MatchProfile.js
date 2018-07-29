@@ -7,7 +7,7 @@ import FitImage from 'react-native-fit-image';
 
 class MatchProfile extends React.Component {
     static navigationOptions = {
-        title: 'MatchProfile',
+        title: 'Pal Profile',
     };
     handleOnPress = (page) => {
         const {navigate} = this.props.navigation;
