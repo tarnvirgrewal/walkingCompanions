@@ -17,7 +17,7 @@ class Thankyou extends React.Component {
                 <Text style={styles.section}>Thank you for your compliments. You just made someone's day!</Text>
                 <View style={styles.section} >
                     <Button
-                        onPress={()=> this.handleOnPress('Map')}
+                        onPress={()=> this.handleOnPress('Home')}
                         title="Home"
                     />
                 </View>
