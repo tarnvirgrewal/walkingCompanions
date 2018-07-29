@@ -20,7 +20,7 @@ class RequestDenied extends React.Component {
 
 
                 <Button
-                    onPress={()=> this.handleOnPress('Home')}
+                    onPress={()=> this.handleOnPress('Map')}
                     title="Go Back"
                 />
             </View>
