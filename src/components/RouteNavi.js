@@ -78,7 +78,7 @@ class Route extends React.Component {
     handleOnPress= (component) => {
         const { navigate } = this.props.navigation;
         navigate(component);
-        Fire.shared.updateUser(false, false);
+
       }
 
     static navigationOptions = {
