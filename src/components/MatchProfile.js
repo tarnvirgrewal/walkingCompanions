@@ -38,7 +38,7 @@ class MatchProfile extends React.Component {
         return (
             <View style={styles.container} >
                 <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />
-                <Animatable.Image animation="zoomIn" style={styles.section} source={require('../../res/Picture1.png')} />
+                <Animatable.Image animation="zoomIn" style={styles.section, styles.image} source={this.state.picture} />
                 <Text style={[styles.section, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.bold, styles.h2]} >Interests</Text>
                 { 
@@ -58,7 +58,7 @@ class MatchProfile extends React.Component {
 const styles= StyleSheet.create({
     container:{
         top: 0,
-        // padding: 20,
+        padding: 20,
         alignItems: 'center',
         justifyContent: 'center'
     },
