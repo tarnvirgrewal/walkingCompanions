@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, TextInput, Button, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, TextInput, Button, StyleSheet, Dimensions, Image } from 'react-native';
 
 import * as Animatable from 'react-native-animatable';
 
@@ -35,9 +35,17 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 1
       },
+      headertext: {
+        fontWeight: 'bold',
+        fontSize: 20,
+      },
+      button: {
+        width: 100,
+        height: 100
+      },
+
 });
 class Potential extends React.Component {
-
     constructor(props) {
         super(props);  
     }
@@ -46,23 +54,27 @@ class Potential extends React.Component {
         return(
             <View style={styles.container}>
                 <Animatable.View animation="bounceInDown" style={{...StyleSheet.absoluteFillObject, position: 'absolute', margin: 15, padding: 4,}}>
+                    <Text style={styles.headertext}> Starting Point </Text>
                     <TextInput
                         style={styles.locationInput}
                         onChangeText={(text) => this.props.updateStart(text)}
                         value={this.props.start}
-                        placeholder="Starting point"
+                        defaultValue="Ormond College"
                         underlineColorAndroid="white" 
                     />
+                    {/* <Image style={styles.arrow} resizeMode='cover' source={require('../../res/down_arrow.png')} /> */}
+                    <Text style={styles.headertext}> Where to? </Text>
                     <TextInput
                         style={styles.locationInput}
                         onChangeText={(text) => this.props.updateDestination(text)}
                         value={this.props.destination}
-                        placeholder="Destination"
+                        defaultValue="Tesltra Labs"
                         underlineColorAndroid="white"
                     />
                 </Animatable.View> 
                 <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 20}}>
                     <Button
+                        style={styles.button}
                         onPress={this.props.pressedBtn}
                         title="Find a Pal" 
                     />

@@ -28,7 +28,7 @@ class ConfirmationPage extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-
+                <Image resizeMode='cover' style={{position: 'absolute', }} source={require('../../res/background_gradient.png')} />  
                 <Image style={styles.section} source={require('../../res/timer.png')} />
                 <Text style={styles.section}>Please wait while we confirm</Text>
                 <View style={styles.section} >
