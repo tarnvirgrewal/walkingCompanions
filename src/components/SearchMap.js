@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     locationInput: {
         // ...StyleSheet.absoluteFillObject,   
         height: 40,
-        padding: 5,
+        padding: 10,
         margin: 5,
         backgroundColor: 'white',
         borderRadius: 5,

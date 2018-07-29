@@ -13,16 +13,17 @@ const styles = StyleSheet.create({
   profile: {
     width: 100,
     height: 100,
-    backgroundColor: '#ace0f9'
+    padding: 20
+    // backgroundColor: '#ace0f9'
   },
   containerProfile: {
-    backgroundColor: '#ace0f9',
+    // backgroundColor: '#ace0f9',
     alignSelf: 'stretch',
     alignItems: 'center',
-    height: 250
+    height: 200,
+    padding: 20
   },
   text: {
-    fontSize: 20,
     fontWeight: 'bold',
     alignItems: 'center',
   },
@@ -112,21 +113,10 @@ class Meet extends React.Component {
                 </MapView>
 
                 <View style={styles.containerProfile}>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}>Match Found</Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}>Meet At Tin Alley, Parkville</Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
-                    <Text style={styles.text}></Text>
+                    <Image resizeMode='cover' style={{position: 'absolute', height: 200}} source={require('../../res/background_gradient.png')} />
+                    <Text style={styles.text, { fontSize: 20}}>Match Found</Text>
+                    <Text style={styles.text, { fontSize: 12}}>Meet At Tin Alley, Parkville</Text>
+                    <View style={{ margin: 5 }}/>
                     <Image 
                         style={styles.profile}
                         source={require('../../res/Picture1.png')} 
