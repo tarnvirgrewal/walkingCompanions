@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Image, StyleSheet, Button, Alert } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
+import Fire from "./Fire";
 
 const styles = StyleSheet.create({
   container: {
@@ -77,6 +78,7 @@ class Route extends React.Component {
     handleOnPress= (component) => {
         const { navigate } = this.props.navigation;
         navigate(component);
+        Fire.shared.updateUser(false, false);
       }
 
     static navigationOptions = {
