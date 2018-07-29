@@ -40,7 +40,7 @@ class Review extends React.Component {
                 <Image style={styles.section} source={require('../../res/Picture1.png')} />
                 <Text style={[styles.section, styles.bold, styles.h1]} >{this.state.name}</Text>
                 <Text style={[styles.section, styles.h2]} >Leave a compliment for your</Text>
-                <Text style={[styles.section, styles.h2]} >Walking Companion </Text>
+                <Text style={[styles.section, styles.h2]} >Walking Pal</Text>
 
                 <View  style={styles.section}>
                     <Button

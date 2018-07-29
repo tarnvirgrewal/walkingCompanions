@@ -64,7 +64,7 @@ class Potential extends React.Component {
                 <Animatable.View animation="bounceInUp" style={{position: 'absolute', margin: 15, padding: 4, bottom: 20}}>
                     <Button
                         onPress={this.props.pressedBtn}
-                        title="Find a companion" 
+                        title="Find a Pal" 
                     />
                 </Animatable.View>
             </View> 

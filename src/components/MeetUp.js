@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ace0f9',
     alignSelf: 'stretch',
     alignItems: 'center',
-    height: 200
+    height: 250
   },
   text: {
     fontSize: 20,
@@ -61,7 +61,7 @@ class Meet extends React.Component {
             },
             ],
             region: {
-                latitude: -37.794565,
+                latitude: -37.793565,
                 longitude: 144.961054,
                 latitudeDelta: 0.015,
                 longitudeDelta: 0.0121,
@@ -122,7 +122,11 @@ class Meet extends React.Component {
                     <Text style={styles.text}>Match Found</Text>
                     <Text style={styles.text}></Text>
                     <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
                     <Text style={styles.text}>Meet At Tin Alley, Parkville</Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
+                    <Text style={styles.text}></Text>
                     <Image 
                         style={styles.profile}
                         source={require('../../res/Picture1.png')} 

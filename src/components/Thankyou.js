@@ -13,7 +13,7 @@ class Thankyou extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Text style={styles.section}>Thank you for walking with WalkingCompanion</Text>
+                <Text style={styles.section}>Thank you for walking with WalkingPal</Text>
                 <View style={styles.section} >
                     <Button
                         onPress={()=> this.handleOnPress('Map')}
@@ -26,15 +26,14 @@ class Thankyou extends React.Component {
     }
 }
 const styles= StyleSheet.create({
-    container:{
+    container: {
         flex:1,
         alignItems: 'center',
         justifyContent: 'center'
     },
-    section:{
-        margin: 20,
-        fontSize: 30
-    }
+    section: {
+        margin: 20
+    },
 });
 
 export default Thankyou;

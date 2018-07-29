@@ -14,14 +14,14 @@ const styles = StyleSheet.create({
   profile: {
     width: 150,
     height: 150,
-    backgroundColor: 'white',
+    backgroundColor: '#ace0f9',
     margin: 20
   },
   containerProfile: {
-    backgroundColor: 'white',
+    backgroundColor: '#ace0f9',
     alignSelf: 'stretch',
     alignItems: 'center',
-    height: 300
+    height: 250
   },
   text: {
     fontSize: 20,
@@ -115,7 +115,8 @@ class Decision extends React.Component {
                 >
                 <Marker
                     coordinate={this.state.region}
-                    image={require('../../res/Picture1.png')}
+                    pinColor='#fff1eb'
+                    ///image={require('../../res/Picture1.png')}
                 />
                 </MapView>
                 <View style={styles.containerProfile}>
@@ -125,18 +126,16 @@ class Decision extends React.Component {
                     />
                     <Text style={styles.text}>Has requested to travel with you!</Text>
                 </View>
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 100}}>
                     <Button
                         onPress={() => this.handleOnPress('MeetUp',true)}
                         title="Accept"
-                        color="#841584"
                     />
                 </View>
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 50}}>
                     <Button
                         onPress={() => this.handleOnPress('Map',false)}
                         title="Decline"
-                        color="#841584"
                     />
                 </View>
             </View>  
