@@ -9,7 +9,7 @@ const placeholder = [
 
 class Review extends React.Component {
     static navigationOptions = {
-        title: 'MatchProfile',
+        title: 'Review',
     };
     handleOnPress = (page) => {
         const {navigate} = this.props.navigation;
@@ -37,20 +37,20 @@ class Review extends React.Component {
     render() {
         return (
             <View style={styles.container} >
-                <Image style={styles.section} source={require('../../res/Picture1.png')} />
+                <Image style={styles.section, {height: 200, width: 200, borderRadius: 1000}} source={require('../../res/Picture1.png')} />
                 <Text style={[styles.section, styles.bold, styles.h1]} >{this.state.name}</Text>
-                <Text style={[styles.section, styles.h2]} >Leave a compliment for your</Text>
-                <Text style={[styles.section, styles.h2]} >Walking Pal</Text>
-
+                <Text style={[styles.section, { fontSize: 18 }]} >Leave a compliment for your Walking Pal</Text>
                 <View  style={styles.section}>
                     <Button
                         onPress={()=> this.handleOnPress('Thankyou')}
                         title="Great Converstaion"
                     />
+                    <View style={{margin: 5}} />
                     <Button
                         onPress={()=> this.handleOnPress('Thankyou')}
                         title="Easygoing"
                     />
+                    <View style={{margin: 5}} />
                     <Button
                         onPress={()=> this.handleOnPress('Thankyou')}
                         title="Good Companion"
@@ -77,7 +77,7 @@ const styles= StyleSheet.create({
         fontWeight: 'bold',
     },
     section: {
-        margin: 20,
+        margin: 10,
     },
 });
 

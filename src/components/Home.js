@@ -14,7 +14,6 @@ class Home extends React.Component {
     render() {
         return (
             <View>
-              <Text >This is my home</Text>
               <Button
                 onPress={()=> this.handleOnPress('Map')}
                 title="Go to Map"

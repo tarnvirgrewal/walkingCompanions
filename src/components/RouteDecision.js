@@ -14,11 +14,9 @@ const styles = StyleSheet.create({
   profile: {
     width: 150,
     height: 150,
-    backgroundColor: '#ace0f9',
     margin: 20
   },
   containerProfile: {
-    backgroundColor: '#ace0f9',
     alignSelf: 'stretch',
     alignItems: 'center',
     height: 250
@@ -120,6 +118,7 @@ class Decision extends React.Component {
                 />
                 </MapView>
                 <View style={styles.containerProfile}>
+                    <Image resizeMode='cover' style={{position: 'absolute', height: 250}} source={require('../../res/background_gradient.png')} />
                     <Image 
                         style={styles.profile}
                         source={require('../../res/Picture1.png')} 
