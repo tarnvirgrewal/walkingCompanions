@@ -1,6 +1,9 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet, Button } from 'react-native';
+import { Text, View, Image, StyleSheet, Button, Dimensions } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
+
+let ScreenWidth = Dimensions.get("window").width;
+
 
 const styles = StyleSheet.create({
   container: {
@@ -113,9 +116,9 @@ class Meet extends React.Component {
                 </MapView>
 
                 <View style={styles.containerProfile}>
-                    <Image resizeMode='cover' style={{position: 'absolute', height: 200}} source={require('../../res/background_gradient.png')} />
-                    <Text style={styles.text, { fontSize: 20}}>Match Found</Text>
-                    <Text style={styles.text, { fontSize: 12}}>Meet At Tin Alley, Parkville</Text>
+                    <Image resizeMode='cover' style={{position: 'absolute', height: 200, width: ScreenWidth, borderRadius: 20}} source={require('../../res/background_gradient.png')} />
+                    <Text style={[styles.text, { fontSize: 20}]}>Match Found</Text>
+                    <Text style={[styles.text, { fontSize: 12}]}>Meet At Tin Alley, Parkville</Text>
                     <View style={{ margin: 5 }}/>
                     <Image 
                         style={styles.profile}
@@ -123,7 +126,7 @@ class Meet extends React.Component {
                     />
                 </View>
 
-                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 100}}>
+                <View style={{position: 'absolute', margin: 15, padding: 4, bottom: 0}}>
                     <Button
                         onPress={() => this.handleOnPress('UserMessages')}
                         title=" Message Pal "
